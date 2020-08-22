@@ -8,7 +8,7 @@
       <CheckBox :data="data" id="checkbox"/>
     </div> -->
     <div class="row p-3 ml-3">
-      <div class="col-sm-8 shadow p-3 mb-5 bg-white rounded">
+      <div class="col-sm-8 shadow p-2 mb-5 bg-white rounded">
         <div class="card">
           <div class="card-body overflow-auto">
             <CheckBox :data="data" id="checkbox"/>

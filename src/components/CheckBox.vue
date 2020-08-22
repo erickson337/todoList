@@ -41,8 +41,4 @@ export default {
 </script>
 
 <style scoped>
-  .align_sub_itens {
-    padding: 1px;
-    margin-left: 4vw;
-  }
 </style>
