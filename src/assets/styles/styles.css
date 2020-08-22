@@ -1,0 +1,25 @@
+body {
+    background: #efefef;
+    overflow-x: hidden;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#header {
+    color: white;
+    font-family: 'Kanit', sans-serif;
+}
+
+.shadow-border {
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#checkbox {
+    /* display: block; */
+    /* box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19); */
+    padding: 10px;
+}
