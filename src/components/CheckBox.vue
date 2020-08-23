@@ -4,7 +4,7 @@
       <div class="input-group mb-3 col-12">
         <div class="input-group-prepend">
           <div class="input-group-text">
-            <input type="checkbox" :id="value.id" v-model="value.value" aria-label="Checkbox for following text input">
+            <input type="checkbox" :id="value.id" v-model="value.value" aria-label="Checkbox for following text input" @change="changeValuesSub(value)">
           </div>
         </div>
         <input type="text" v-model="value.label" @click="setPointerArray(value)" class="form-control" :style="`${value.value ? 'text-decoration: line-through;' : ''}`" aria-label="Text input with checkbox" :readonly="value.value">
@@ -35,6 +35,17 @@ export default {
   methods: {
     setPointerArray (data) {
       this.$root.$emit('pointer_position', data)
+    },
+    changeValuesSub (data) {
+      this.setPointerArray(data)
+      let change = (data, value) => {
+        data.forEach(elem => {
+          elem.value = value
+          change(elem.sub_itens, value)
+        })
+        if (data.sub_itens) change(data.sub_itens, value)
+      }
+      change(data.sub_itens, data.value)
     }
   }
 }
