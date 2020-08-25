@@ -51,7 +51,7 @@ export default {
     const vm = this
     const keysboards = {
       8: () => vm.deletePositionArray(),
-      13: (array = [], hash_id) => array.push({ id: hash_id, value: false, label: '', sub_itens: [], root: array.length }),
+      13: (array = [], hash_id) => array.push({ id: hash_id, value: false, label: '', sub_itens: [], root: array.length, show_sub_itens: true }),
       16: () => vm.setValueArray(),
       46: () => vm.deletePositionArray()
     }
@@ -101,9 +101,9 @@ export default {
       
       const hash_id = this.generateHashID()
       if (Object.keys(this.instance_data).length)
-        this.instance_data.sub_itens.push({ id: hash_id, value: false, label: '', sub_itens: [] })
+        this.instance_data.sub_itens.push({ id: hash_id, value: false, label: '', sub_itens: [], show_sub_itens: true })
       else
-        this.data[this.data.length - 1].sub_itens.push({ id: hash_id, value: false, label: '', sub_itens: [] })
+        this.data[this.data.length - 1].sub_itens.push({ id: hash_id, value: false, label: '', sub_itens: [], show_sub_itens: true })
     }
   }
 }
