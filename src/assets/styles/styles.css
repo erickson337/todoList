@@ -13,6 +13,7 @@ body {
 #header {
     color: white;
     font-family: 'Kanit', sans-serif;
+    text-align: center;
 }
 
 .shadow-border {

@@ -5,7 +5,7 @@
       <div class="col-12">
         <md-field>
           <div style="padding: 5px"><input type="checkbox" :id="value.id" v-model="value.value" aria-label="Checkbox for following text input" @change="changeValuesSub(value)"></div>
-          <md-input md-dense v-model="value.label" @click="setPointerArray(value)" :style="`${value.value ? 'text-decoration: line-through;' : ''}`" aria-label="Text input with checkbox" :readonly="value.value"></md-input>
+          <md-input md-dense v-model="value.label" @focus="setPointerArray(value)" @click="setPointerArray(value)" :style="`${value.value ? 'text-decoration: line-through;' : ''}`" aria-label="Text input with checkbox" :readonly="value.value"></md-input>
         </md-field>
       </div>
       <div class="ml-5" v-if="value.sub_itens.length && value.show_sub_itens">

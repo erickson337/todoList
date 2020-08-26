@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <nav class="navbar navbar navbar-dark bg-dark">
-      <div id="header">TodoList</div>
+      <div class="row">
+        <img src="./assets/images/to-do-list.svg" class="ml-1" alt="logo" width="20" height="20">
+        <div id="header"><span style="vertical-align: bottom;">TodoList</span></div>
+      </div>
     </nav>
     <div class="row p-3 ml-2 justify-content-between">
       <div class="col-8 shadow p-2 mb-5 bg-white rounded">
@@ -61,18 +64,19 @@ export default {
     CheckBox,
   },
   mounted() {
-    const vm = this;
+    const vm = this
     this.$root.$on("pointer_position", function (data) {
-      vm.instance_data = data;
+      vm.instance_data = data
+      vm.saveStateData()
     })
   },
   created() {
-    const vm = this;
+    const vm = this
     window.addEventListener('keydown', vm.handlerEvent)
   },
   data() {
     return {
-      data: [],
+      data: this.$store.state.data,
       instance_data: {},
       toggle_button: false,
       toggle_key_active: true,
@@ -84,7 +88,7 @@ export default {
       ],
       keysboards: {
         8: () => this.deletePositionArray(),
-        13: (array = [], hash_id) =>
+        13: (array = [], hash_id) => {
           array.push({
             id: hash_id,
             value: false,
@@ -92,7 +96,9 @@ export default {
             sub_itens: [],
             root: array.length,
             show_sub_itens: true
-          }),
+          })
+          this.$store.commit('saveData', this.data)
+        },
         16: () => this.setValueArray(),
         46: () => this.deletePositionArray()
       }
@@ -100,12 +106,16 @@ export default {
   },
   methods: {
     generateHashID,
+    saveStateData () {
+      this.$store.commit('saveData', this.data)
+    },
     toggleEventListener () {
       if (this.toggle_key_active) {
         window.addEventListener('keydown', this.handlerEvent)
       } else {
         window.removeEventListener('keydown', this.handlerEvent)
       }
+      this.saveStateData()
     },
     handlerEvent (e) {
       const { keyCode } = e
@@ -140,6 +150,7 @@ export default {
           sub_itens: [],
           show_sub_itens: true
         })
+        this.saveStateData()
       } else {
         this.data[this.data.length - 1].sub_itens.push({
           id: hash_id,
@@ -148,6 +159,7 @@ export default {
           sub_itens: [],
           show_sub_itens: true
         })
+        this.saveStateData()
       }
     }
   }
@@ -155,5 +167,5 @@ export default {
 </script>
 
 <style>
-@import "./assets/styles/styles.css"
+@import "./assets/styles/styles.css";
 </style>
