@@ -137,6 +137,7 @@ export default {
       } else {
         this.data.pop()
       }
+      this.saveStateData()
     },
     setValueArray () {
       if (!this.data.length) return false
