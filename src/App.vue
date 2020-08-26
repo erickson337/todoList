@@ -81,10 +81,10 @@ export default {
       toggle_button: false,
       toggle_key_active: true,
       messages: [
-        "- Precione a tecla enter para adicionar um item;",
-        "- Precione a tecla shift para adicionar sub listas;",
-        "- Precione a tecla delete para excluir um item de selecionado;",
-        "- Para excluir ou adicionar um sub item, clique em um dos itens/sub item."
+        "- Pressione a tecla enter para adicionar um item;",
+        "- Pressione a tecla shift para adicionar sub listas;",
+        "- Pressione a tecla delete para excluir um item selecionado;",
+        "Obs: Clique em um item e pressione uma das teclas acima para excluir ou adicionar sub itens."
       ],
       keysboards: {
         // 8: () => this.deletePositionArray(),
