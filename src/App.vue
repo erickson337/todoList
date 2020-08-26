@@ -9,7 +9,7 @@
           <div class="col-12">
             <div class="float-right">
               <div>
-                <md-switch v-model="toggle_key_active" @change="toggleEventListener" class="md-primary">{{ toggle_key_active ? 'Disable' : 'Enable'}} keyboard functions <v-icon :name="`${toggle_key_active ? 'keyboard' : 'key'}`" /></md-switch>
+                <md-switch v-model="toggle_key_active" @change="toggleEventListener" class="md-primary">{{ toggle_key_active ? 'Desabilitar' : 'Ativar'}} funções de teclado <v-icon :name="`${toggle_key_active ? 'keyboard' : 'key'}`" /></md-switch>
               </div>
             </div>
           </div>
@@ -77,10 +77,10 @@ export default {
       toggle_button: false,
       toggle_key_active: true,
       messages: [
-        "- Press enter key for add item;",
-        "- Press shift key for add sub item;",
-        "- Press delete key for remove item or sub item;",
-        "* For delete and add sub item specific, click in a item or sub item."
+        "- Precione a tecla enter para adicionar um item;",
+        "- Precione a tecla shift para adicionar sub listas;",
+        "- Precione a tecla delete para excluir um item de selecionado;",
+        "- Para excluir ou adicionar um sub item, clique em um dos itens/sub item."
       ],
       keysboards: {
         8: () => this.deletePositionArray(),
