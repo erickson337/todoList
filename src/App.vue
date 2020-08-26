@@ -87,7 +87,7 @@ export default {
         "- Para excluir ou adicionar um sub item, clique em um dos itens/sub item."
       ],
       keysboards: {
-        8: () => this.deletePositionArray(),
+        // 8: () => this.deletePositionArray(),
         13: (array = [], hash_id) => {
           array.push({
             id: hash_id,
